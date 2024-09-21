@@ -3,6 +3,15 @@ body{
     justify-content: center;
     align-items: center;
     height:100vh;
-    background: #535353;
+    background: #343a40;
     color:white;
+    margin:0;
+}
+.box{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    background-color: #495057;
+    padding:2rem;
 }

@@ -1,13 +1,17 @@
 let Nobtn = document.querySelector('.No');
-Nobtn.addEventListener('click', () => {
-    let x = Math.random() * 400 + 1;
-    let y = Math.random() * 200 + 1; 
-    Nobtn.style.transform = `translate(${x}px, ${y}px)`;
-});
+let box = document.querySelector('.box');
 
 Nobtn.addEventListener('mouseover', () => {
-    let x = Math.random() * 400 + 1;
-    let y = Math.random() * 200 + 1; 
-    Nobtn.style.transform = `translate(${x}px, ${y}px)`;
-});
+    // Get the dimensions of the box
+    const boxRect = box.getBoundingClientRect();
 
+    // Get the current position of the button
+    const btnRect = Nobtn.getBoundingClientRect();
+
+    // Generate random x and y positions within the box
+    let newX = Math.random() * (boxRect.width - btnRect.width);
+    let newY = Math.random() * (boxRect.height - btnRect.height);
+
+    // Apply translation to move the button to a random new position
+    Nobtn.style.transform = `translate(${newX}px, ${newY}px)`;
+});
